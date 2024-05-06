@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "GoJira",
+  "version": "1.0",
+  "omnibox": {
+    "keyword": "gj"
+  },
+  "permissions": [
+    "scripting",
+    "http://www.atlassian.net/"
+  ],
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "web_accessible_resources/*",
+        "/*.json",
+        "/*.js",
+        "/*.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; "
+  }
+}
